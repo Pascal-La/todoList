@@ -1,0 +1,13 @@
+.tasks_container {
+  padding: 2em;
+  background-color: blueviolet;
+
+  .task_single-task {
+    padding: 1em;
+    background-color: chocolate;
+
+    &.task_single-task--done {
+      text-decoration: line-through;
+    }
+  }
+}
