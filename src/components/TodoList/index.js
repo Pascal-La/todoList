@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Form from '../Form';
+import Counter from '../Counter';
 import Tasks from '../Tasks';
 
 import initialTasks from '../data/tasks';
@@ -62,6 +63,9 @@ const TodoList = () => {
     setTasks(updateTaskList);
   };
 
+  const tasksNotDone = tasks.filter((element) => element.done === false);
+  const nbTasksNotDone = tasksNotDone.length;
+
   return (
     <div className="app_container">
       <Form
@@ -69,6 +73,7 @@ const TodoList = () => {
         value={taskLabel}
         setValue={updateTaskLabel}
       />
+      <Counter nbTasks={nbTasksNotDone} />
       <Tasks
         tasksList={tasks}
         updateTaskStatus={updateTaskStatus}
